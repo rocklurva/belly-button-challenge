@@ -108,6 +108,54 @@ function plotCharts(sample) {
 
         document.getElementById('sample-metadata').innerHTML = meta_info;
 
+        // Get belly button wash frequency
+        var data = [
+            {
+                title: {text: 'Belly Button Washing Frequency <br> Scrubs Per Week'},
+                type: 'indicator',
+                mode: 'gauge+number',
+                value: wfreq,
+                gauge: {
+                    axis: {
+                        range: [0, 9],
+                        ticks: 9
+                    },
+                    bar: {
+                        color: '#e2725b'
+                    },
+                    steps: [
+                        {range: [0, 1], color: '#440154'},
+                        {range: [1, 2], color: '#3e4989'},
+                        {range: [2, 3], color: '#31688e'},
+                        {range: [3, 4], color: '#26828e'},
+                        {range: [4, 5], color: '#1f9e89'},
+                        {range: [5, 6], color: '#35b779'},
+                        {range: [6, 7], color: '#6ece58'},
+                        {range: [7, 8], color: '#b5de2b'},
+                        {range: [8, 9], color: '#fde725'}
+                    ],
+                    threshold: {
+                        line: {
+                            color: '#e2725b',
+                            width: 4
+                        },
+                        value: wfreq
+                    }
+                }
+            }
+        ];
+
+        var layout = {
+            width: 500,
+            height: 400,
+            margin: {
+                t: 0,
+                b: 0
+            }
+        }
+
+        Plotly.newPlot('gauge', data, layout);
+
     });
 }
 
