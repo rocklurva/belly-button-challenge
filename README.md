@@ -1,6 +1,6 @@
 # belly-button-challenge
 
-The live solution can be seen here, https://rocklurva.github.io/
+The live solution can be seen here, https://rocklurva.github.io/belly-button-challenge/
 
 The data is extracted using D3 and it then got processed and used to populate the drop down menu (so that it gets dynamically updated if there is a change in the data source).
 
